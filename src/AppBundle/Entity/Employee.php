@@ -54,7 +54,7 @@ class Employee
      *
      * @return Employee
      */
-    public function setSalary($salary):Employee
+    public function setSalary(float $salary):Employee
     {
         $this->salary = $salary;
 
@@ -66,7 +66,7 @@ class Employee
      *
      * @return float
      */
-    public function getSalary():float
+    public function getSalary()
     {
         return $this->salary;
     }
@@ -78,7 +78,7 @@ class Employee
      *
      * @return Employee
      */
-    public function setBonus($bonus):Employee
+    public function setBonus(float $bonus):Employee
     {
         $this->bonus = $bonus;
 
@@ -90,7 +90,7 @@ class Employee
      *
      * @return float
      */
-    public function getBonus():float
+    public function getBonus()
     {
         return $this->bonus;
     }

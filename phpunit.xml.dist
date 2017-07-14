@@ -27,8 +27,8 @@
 
     <filter>
         <whitelist>
-            <directory>src/POCSf/PHPUnitBundle/Salary/SalaryCalculator/*</directory>
-            <directory>src/tests/*</directory>
+            <directory>src/AppBundle/Salary/SalaryCalculator/*</directory>
+            <directory>tests</directory>
             <exclude>
                 <directory>src/*Bundle/Resources</directory>
                 <directory>src/*/*Bundle/Resources</directory>

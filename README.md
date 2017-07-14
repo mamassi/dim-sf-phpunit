@@ -12,3 +12,13 @@ cd ... ../dim-sf-phpnit/
 
 Command :
 vendor/bin/phpunit src/AppBundle/Salary/SalaryCalculator/SalaryCalculatorTest.php
+
+Example 2
+---------
+
+**How to Test Form**
+
+cd ... ../dim-sf-phpnit/
+
+Command :
+vendor/bin/phpunit tests/AppBundle/Form/EmployeeTypeTest.php

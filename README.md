@@ -1,14 +1,20 @@
 POC Symfony PHPUnit
 ===================
 
-A Symfony project created on July 11, 2017, 12:11 pm.
+Installation
+------------
+1 - git clone https://github.com/mamassi/dim-sf-phpunit.git
+
+2 - cd ... ../dim-sf-phpnit/
+
+3 - composer install
 
 Example 1
 ---------
 
 **How to Test Code that Interacts with the Database**
 
-cd ... ../dim-sf-phpnit/
+cd dim-sf-phpnit/
 
 Command :
 vendor/bin/phpunit src/AppBundle/Salary/SalaryCalculator/SalaryCalculatorTest.php
@@ -22,3 +28,13 @@ cd ... ../dim-sf-phpnit/
 
 Command :
 vendor/bin/phpunit tests/AppBundle/Form/EmployeeTypeTest.php
+
+Example 3
+---------
+
+**How to Test Command**
+
+cd ... ../dim-sf-phpnit/
+
+Command :
+vendor/bin/phpunit tests/AppBundle/Command/CreateUserCommandTest.php

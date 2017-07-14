@@ -95,4 +95,3 @@ class Employee
         return $this->bonus;
     }
 }
-

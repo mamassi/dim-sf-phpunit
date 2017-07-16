@@ -38,3 +38,13 @@ cd ... ../dim-sf-phpnit/
 
 Command :
 vendor/bin/phpunit tests/AppBundle/Command/CreateUserCommandTest.php
+
+Example 4
+---------
+
+**How to Test Doctrine Repositories**
+
+cd ... ../dim-sf-phpnit/
+
+Command :
+vendor/bin/phpunit tests/AppBundle/Repository/EmployeeRepositoryTest.php

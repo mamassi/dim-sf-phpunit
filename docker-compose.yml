@@ -1,0 +1,47 @@
+version: '2'
+
+services:
+    php:
+        build: ./docker/php7.0-fpm
+        ports:
+            - 9010:9000
+        volumes:
+            - .:/var/www/dim-sf-phpunit
+        working_dir: /var/www/dim-sf-phpunit
+
+    nginx:
+        build: ./docker/nginx
+        ports:
+            - 8282:80
+        links:
+            - php
+        volumes_from:
+            - php
+#        volumes:
+#            - ./docker/logs/nginx/:/var/log/nginx
+
+    mysql:
+        image: mysql:latest
+        volumes:
+          - /var/lib/mysql
+        ports:
+          - "3306:3306"
+        links:
+            - php
+        environment:
+            MYSQL_ROOT_PASSWORD: dimsfphpunit
+            MYSQL_DATABASE: dimsfphpunit
+            MYSQL_USER: dimsfphpunit
+            MYSQL_PASSWORD: dimsfphpunit
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        environment:
+          SERVICE_80_NAME: 'phpmyadmin'
+          SERVICE_80_TAGS: 'http'
+          MYSQL_HOST: 'root'
+          MYSQL_PORT: '3308|3306'
+        links:
+            - php
+        ports:
+            - 8181:80

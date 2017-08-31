@@ -2,6 +2,12 @@
     "name": "massi/dim-sf-phpunit",
     "license": "proprietary",
     "type": "project",
+    "authors": [
+        {
+            "name": "Mamadou MASSI ABDOULAYE",
+            "email": "dev.massi@gmail.com"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "AppBundle\\": "src/AppBundle"
@@ -22,7 +28,7 @@
     "require": {
         "php": "^7.0",
         "doctrine/doctrine-bundle": "^1.6",
-        "doctrine/orm": "^2.5",
+        "doctrine/orm": "^2.5.8",
         "incenteev/composer-parameter-handler": "^2.0",
         "sensio/distribution-bundle": "^5.0.19",
         "sensio/framework-extra-bundle": "^3.0.2",

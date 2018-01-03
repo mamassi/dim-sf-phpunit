@@ -6,8 +6,9 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Employee
+ * Class Employee
  *
+ * @package AppBundle\Entity *
  * @ORM\Table(name="employee")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\EmployeeRepository")
  */
@@ -42,7 +43,7 @@ class Employee
      *
      * @return int
      */
-    public function getId():int
+    public function getId(): int
     {
         return $this->id;
     }
@@ -54,7 +55,7 @@ class Employee
      *
      * @return Employee
      */
-    public function setSalary(float $salary):Employee
+    public function setSalary(float $salary): Employee
     {
         $this->salary = $salary;
 
@@ -78,7 +79,7 @@ class Employee
      *
      * @return Employee
      */
-    public function setBonus(float $bonus):Employee
+    public function setBonus(float $bonus): Employee
     {
         $this->bonus = $bonus;
 

@@ -10,10 +10,16 @@ namespace AppBundle\Salary\SalaryCalculator;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
+
 use PHPUnit\Framework\TestCase;
+
 use AppBundle\Entity\Employee;
 use AppBundle\Salary\SalaryCalculator;
 
+/**
+ * Class SalaryCalculatorTest
+ * @package AppBundle\Salary\SalaryCalculator
+ */
 class SalaryCalculatorTest extends TestCase
 {
 

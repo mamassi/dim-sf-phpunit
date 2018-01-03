@@ -11,21 +11,23 @@ Installation
          
     4.  $ docker-compose ps
      
-    -------------------------------------------------------------------------------------------------
-    dimsfphpunit_mysql_1        docker-entrypoint.sh mysqld     Up      0.0.0.0:3306->3306/tcp        
-    dimsfphpunit_nginx_1        nginx                           Up      443/tcp, 0.0.0.0:8282->80/tcp 
-    dimsfphpunit_php_1          docker-php-entrypoint php-fpm   Up      0.0.0.0:9010->9000/tcp        
-    dimsfphpunit_phpmyadmin_1   /run.sh phpmyadmin              Up      0.0.0.0:8181->80/tcp          
+    
+              Name                         Command              State               Ports            
+    -----------------------------------------------------------------------------------------------------------------------------------------
+    dimsfphpunit_db_1           docker-entrypoint.sh mysqld     Up      0.0.0.0:3307->3306/tcp       
+    dimsfphpunit_nginx_1        nginx                           Up      443/tcp, 0.0.0.0:8080->80/tcp
+    dimsfphpunit_php_1          docker-php-entrypoint php-fpm   Up      9000/tcp                     
+    dimsfphpunit_phpmyadmin_1   /run.sh phpmyadmin              Up      0.0.0.0:8181->80/tcp   
      
     5.  $ docker exec -ti dimsfphpunit_php_1 bash
      
-    6.  root@8d0ff4f52a43:/var/www/dim-sf-phpunit# php bin/console doctrine:schema:create --dump-sql
+    6.  root@6364ed1037ac:/var/www/dim-sf-phpunit#  php bin/console doctrine:schema:create --dump-sql
         
     CREATE TABLE employee (id INT AUTO_INCREMENT NOT NULL, salary DOUBLE PRECISION NOT NULL, bonus DOUBLE PRECISION NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB;
      
-    7.  root@8d0ff4f52a43:/var/www/dim-sf-phpunit# php bin/console doctrine:schema:update --force
+    7.  root@6364ed1037ac:/var/www/dim-sf-phpunit#  php bin/console doctrine:schema:update --force
      
-    8.  root@8d0ff4f52a43:/var/www/dim-sf-phpunit# exit
+    8.  root@6364ed1037ac:/var/www/dim-sf-phpunit#  exit
      
     9.  $ docker exec -ti dimsfphpunit_mysql_1 bash
      
@@ -52,32 +54,32 @@ Example 1
 
 **How to Test Code that Interacts with the Database**
 
-    root@8d0ff4f52a43:/var/www/dim-sf-phpunit# vendor/bin/phpunit src/AppBundle/Salary/SalaryCalculator/SalaryCalculatorTest.php
+    root@6364ed1037ac:/var/www/dim-sf-phpunit#  vendor/bin/phpunit src/AppBundle/Salary/SalaryCalculator/SalaryCalculatorTest.php
 
 Example 2
 ---------
 
 **How to Test Form**
 
-    root@8d0ff4f52a43:/var/www/dim-sf-phpunit# vendor/bin/phpunit tests/AppBundle/Form/EmployeeTypeTest.php
+    root@6364ed1037ac:/var/www/dim-sf-phpunit#  vendor/bin/phpunit tests/AppBundle/Form/EmployeeTypeTest.php
 
 Example 3
 ---------
 
 **How to Test Command**
 
-    root@8d0ff4f52a43:/var/www/dim-sf-phpunit# vendor/bin/phpunit tests/AppBundle/Command/CreateUserCommandTest.php
+    root@6364ed1037ac:/var/www/dim-sf-phpunit#  vendor/bin/phpunit tests/AppBundle/Command/CreateUserCommandTest.php
 
 Example 4
 ---------
 
 **How to Test Doctrine Repositories**
 
-    root@8d0ff4f52a43:/var/www/dim-sf-phpunit# vendor/bin/phpunit tests/AppBundle/Repository/EmployeeRepositoryTest.php
+    root@6364ed1037ac:/var/www/dim-sf-phpunit#  vendor/bin/phpunit tests/AppBundle/Repository/EmployeeRepositoryTest.php
 
 Example 5
 ---------
 
 **How to test a controller that calls a service**
 
-    root@8d0ff4f52a43:/var/www/dim-sf-phpunit# vendor/bin/phpunit tests/AppBundle/Controller/ServiceControllerTest.php 
+    root@6364ed1037ac:/var/www/dim-sf-phpunit#  vendor/bin/phpunit tests/AppBundle/Controller/ServiceControllerTest.php 

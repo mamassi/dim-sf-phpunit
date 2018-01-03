@@ -9,10 +9,14 @@ declare(strict_types = 1);
 namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
+/**
+ * Class ServiceController
+ * @package AppBundle\Controller
+ */
 class ServiceController extends Controller
 {
     /**

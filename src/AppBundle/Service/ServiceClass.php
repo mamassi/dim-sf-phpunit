@@ -8,9 +8,16 @@ declare(strict_types = 1);
  */
 namespace AppBundle\Service;
 
+/**
+ * Class ServiceClass
+ * @package AppBundle\Service
+ */
 class ServiceClass
 {
-    public function someMethod()
+    /**
+     * @return string
+     */
+    public function someMethod(): string
     {
         return "A service text";
     }

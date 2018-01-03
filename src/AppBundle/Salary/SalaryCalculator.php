@@ -11,6 +11,12 @@ namespace AppBundle\Salary;
 
 use Doctrine\ORM\EntityManager;
 
+use AppBundle\Entity\Employee;
+
+/**
+ * Class SalaryCalculator
+ * @package AppBundle\Salary
+ */
 class SalaryCalculator
 {
     /**
@@ -31,9 +37,9 @@ class SalaryCalculator
      * @param $id
      * @return float
      */
-    public function calculateTotalSalary($id):float
+    public function calculateTotalSalary($id): float
     {
-        $employeeRepository = $this->em->getRepository('POCSfPHPUnitBundle:Employee');
+        $employeeRepository = $this->em->getRepository(Employee::class);
         $employee = $employeeRepository->find($id);
 
         return $employee->getSalary() + $employee->getBonus();

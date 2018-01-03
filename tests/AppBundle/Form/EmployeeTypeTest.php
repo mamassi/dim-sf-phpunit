@@ -4,9 +4,14 @@ declare(strict_types = 1);
 namespace AppBundle\Tests\Form;
 
 use Symfony\Component\Form\Test\TypeTestCase;
+
 use AppBundle\Entity\Employee;
 use AppBundle\Form\EmployeeType;
 
+/**
+ * Class EmployeeTypeTest
+ * @package AppBundle\Tests\Form
+ */
 class EmployeeTypeTest extends TypeTestCase
 {
 

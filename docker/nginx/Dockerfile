@@ -1,17 +1,15 @@
-FROM debian:jessie
+FROM alpine:3.4
 
-RUN apt-get update && apt-get install -y \
-    nginx
+RUN apk add --update nginx
+RUN rm -rf /var/cache/apk/* && rm -rf /tmp/*
 
 ADD nginx.conf /etc/nginx/
-ADD dim-sf-phpunit.conf /etc/nginx/sites-available/
+ADD dim-sf-phpunit.conf /etc/nginx/conf.d/
 
-RUN ln -s /etc/nginx/sites-available/dim-sf-phpunit.conf /etc/nginx/sites-enabled/dim-sf-phpunit
-RUN rm /etc/nginx/sites-enabled/default
+RUN echo "upstream php-upstream { server php:9001; }" > /etc/nginx/conf.d/upstream.conf
 
-RUN echo "upstream php-upstream { server php:9000; }" > /etc/nginx/conf.d/upstream.conf
+RUN adduser -D -g '' -G www-data www-data
 
-RUN usermod -u 501 www-data
 
 CMD ["nginx"]
 

@@ -7,13 +7,18 @@
  */
 namespace AppBundle\Controller;
 
-use PHPUnit\Framework\TestCase;
-use AppBundle\Service\ServiceClass;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
+use PHPUnit\Framework\TestCase;
+
+use AppBundle\Service\ServiceClass;
+
+/**
+ * Class ServiceControllerTest
+ * @package AppBundle\Controller
+ */
 class ServiceControllerTest extends TestCase
 {
-
     public function testServiceController()
     {
         $controller = new ServiceController();

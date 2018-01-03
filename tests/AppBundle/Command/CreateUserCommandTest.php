@@ -8,16 +8,18 @@ declare(strict_types = 1);
  */
 namespace AppBundle\Tests\Command;
 
-use AppBundle\Command\CreateUserCommand;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
+use AppBundle\Command\CreateUserCommand;
+
+/**
+ * Class CreateUserCommandTest
+ * @package AppBundle\Tests\Command
+ */
 class CreateUserCommandTest extends KernelTestCase
 {
-    /**
-     * @var
-     */
     protected $createUserCommand;
 
     public function setUp()

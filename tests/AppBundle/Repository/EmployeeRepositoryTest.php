@@ -5,6 +5,8 @@ namespace AppBundle\Tests\Repository;
 
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
+use AppBundle\Entity\Employee;
+
 /**
  * Class EmployeeRepositoryTest
  * @package AppBundle\Tests\Repository
@@ -31,7 +33,7 @@ class EmployeeRepositoryTest extends KernelTestCase
     public function testEmployeeById()
     {
         $employee = $this->em
-            ->getRepository('AppBundle:Employee')
+            ->getRepository(Employee::class)
             ->find(1);
 
         $this->assertCount(1, $employee);
